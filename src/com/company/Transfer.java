@@ -5,13 +5,14 @@ import java.time.LocalDateTime;
 import java.lang.Object;
 
 public class Transfer {
-    Scanner sc = new Scanner(System.in);
-    private String transferGetter;
-    private String getterAccountNumber;
-    private String transferTittle;
-    private double transferAmount;
-    private char confirm;
-    void transfer(){
+    static Scanner sc = new Scanner(System.in);
+    private static String transferGetter;
+    private static String getterAccountNumber;
+    private static String transferTittle;
+    private static double transferAmount;
+    private static char confirm;
+
+    static void transfer() {
         System.out.println("Getter name:");
         transferGetter = sc.nextLine();
 
@@ -37,5 +38,25 @@ public class Transfer {
         System.out.println("Confirm it (y/n):");
         confirm = sc.next().charAt(0);
 
+        if (confirm == 'y') {
+            System.out.println("Transaction confirmed, write your PIN please");
+            String PIN = sc.nextLine();
+            if (PIN.equals(UserAccount.getPIN())) {
+                System.out.println("Transaction complited");
+            } else {
+                int i = 0;
+                while (i < 3) {
+                    System.out.println("Wrong PIN, try again: ");
+                    PIN = sc.nextLine();
+                    if (PIN.equals(UserAccount.getPIN())) {
+                        System.out.println("Transaction complited");
+                        break;
+                    }
+                    i++;
+                }
+                System.out.println("Your account has been blocked, change your PIN please");
+            }
+
+        }
     }
 }

@@ -5,6 +5,12 @@ public class UserAccount {
     private static double accountBalance = 1000;
     private final static String accountNumber = "68 5928 1245 5256 2750 2356 1255";
 
+    public static String getPIN() {
+        return PIN;
+    }
+
+    private static String PIN = "1234";
+
     public static String getAccountNumber() {
         return accountNumber;
     }
@@ -20,6 +26,5 @@ public class UserAccount {
     public void setAccountBalance(double accountBalance) {
         this.accountBalance = accountBalance;
     }
-
 
 }

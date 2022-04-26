@@ -16,7 +16,7 @@ public class Menu {
                 case 1:
                     infoMenu();
                 case 2:
-                    System.out.println("Transfer menu to fill");
+                    Transfer.transfer();
                     break;
                 case 3:
                     System.out.println("Transfer history to fill");
@@ -26,6 +26,12 @@ public class Menu {
                     break;
                 case 5:
                     System.out.println("Change password to fill");
+                    break;
+                case 6:
+                    System.out.println("Change PIN");
+                    break;
+                case 7:
+                    System.out.println("Change limits");
                     break;
             }
         }
